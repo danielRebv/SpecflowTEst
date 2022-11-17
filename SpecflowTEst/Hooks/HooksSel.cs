@@ -1,10 +1,7 @@
 ﻿using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
 
-using TechTalk.SpecFlow;
 
 namespace SpecflowTEst.Hooks
 {
@@ -18,8 +15,6 @@ namespace SpecflowTEst.Hooks
         {
             _objectContainer = objectContainer;
         }
-
-
 
         [BeforeScenario]
         public void initialize()

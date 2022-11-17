@@ -24,9 +24,10 @@ namespace SpecflowTEst.StepDefinitions
         [When(@"I Search Tsoft on google")]
         public void WhenISearchTsoftOnGoogle()
         {
-            _driver.FindElement(By.XPath("//input[@title='Buscar']")).SendKeys("Tsoft");
+            _driver.FindElement(By.Name("q")).SendKeys("Tsoft");
             _driver.FindElement(By.XPath("//input[@title='Buscar']")).Submit();
             Thread.Sleep(1000);
+
         }
 
         [Then(@"I click Tsoft WebPage")]
