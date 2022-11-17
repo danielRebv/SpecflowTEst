@@ -15,9 +15,16 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: VisualStudioTestPlatformInstaller@1
+  inputs:
+    packageFeedSelector: 'nugetOrg'
+    versionSelector: 'latestStable'
+
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
+
   inputs:
     restoreSolution: '$(solution)'
 
