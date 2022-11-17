@@ -1,5 +1,6 @@
 # ASP.NET Core (.NET Framework)
 
+
 # Build and test ASP.NET Core projects targeting the full .NET Framework.
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
@@ -24,11 +25,10 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VisualStudioTestPlatformInstaller@1
+- task: MSBuild@1
   inputs:
-    packageFeedSelector: 'nugetOrg'
-    versionSelector: 'specificVersion'
-    testPlatformVersion: '17.2.0'
+    solution: '**/*.sln'
+    msbuildVersion: '17.0'
 
 
 - task: VSBuild@1
