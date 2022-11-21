@@ -1,21 +1,23 @@
-﻿using BoDi;
+﻿
+using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 
 namespace SpecflowTEst.Hooks
 {
+
+    
     [Binding]
-    public class HooksSel 
+    public class HooksSel
     {
         private readonly IObjectContainer _objectContainer;
         private IWebDriver _driver;
 
-        public HooksSel(IObjectContainer objectContainer)
-        {
-            _objectContainer = objectContainer;
-        }
+        public HooksSel(IObjectContainer objectContainer) => _objectContainer = objectContainer;
 
+
+        
         [BeforeScenario]
         public void initialize()
         {
@@ -24,6 +26,7 @@ namespace SpecflowTEst.Hooks
             _driver.Manage().Window.Maximize();
         }
 
+     
 
         [AfterScenario]
         public void CleanUp()
