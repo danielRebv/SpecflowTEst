@@ -1,4 +1,5 @@
 ﻿
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SpecflowTEst.Homepage;
 
@@ -38,6 +39,11 @@ namespace SpecflowTEst.StepDefinitions
         {
             //_driver.FindElement(By.XPath("//h3[normalize-space()='HOME - TSOFT - Make IT Real']")).Click();
             _homepage.getSearchInput();
+            _homepage.getTitle();
+            Assert.IsTrue(_homepage.getTitle().Contains("Hola"));
+            //Assert.IsTrue(_homepage.getTitle().Contains("HOME - TSOFT - Make IT Real"));
+
+
         }
 
     }

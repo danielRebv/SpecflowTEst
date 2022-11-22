@@ -42,5 +42,10 @@ namespace SpecflowTEst.Homepage
             _driver.Navigate().GoToUrl(url);    
             return this;
         }
+
+        public string getTitle()
+        {
+            return _driver.Title;
+        }
     }
 }
